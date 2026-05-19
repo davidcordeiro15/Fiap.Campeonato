@@ -202,7 +202,7 @@ Content-Type: application/json
 
 ---
 
-### 🥚 Easter Egg — Palmeiras sem mundial
+### 🥚 Easter Egg — Palmeiras sem mundial - Invenção do David, o Marchel não tem nada a ver com isso
 ```http
 POST /api/times
 Content-Type: application/json
