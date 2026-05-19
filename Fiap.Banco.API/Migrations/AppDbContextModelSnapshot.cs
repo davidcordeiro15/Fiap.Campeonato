@@ -240,8 +240,8 @@ namespace Fiap.Banco.API.Migrations
                 {
                     b.HasBaseType("Fiap.Banco.API.Models.Campeonato");
 
-                    b.Property<bool>("ConfrontosGerados")
-                        .HasColumnType("BOOLEAN");
+                    b.Property<short>("ConfrontosGerados")
+                        .HasColumnType("NUMBER(1)");
 
                     b.Property<int>("TotalRodadas")
                         .HasColumnType("NUMBER(10)");

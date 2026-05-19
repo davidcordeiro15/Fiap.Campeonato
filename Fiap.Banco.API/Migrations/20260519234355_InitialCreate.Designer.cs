@@ -12,7 +12,7 @@ using Oracle.EntityFrameworkCore.Metadata;
 namespace Fiap.Banco.API.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20260519232926_InitialCreate")]
+    [Migration("20260519234355_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -243,8 +243,8 @@ namespace Fiap.Banco.API.Migrations
                 {
                     b.HasBaseType("Fiap.Banco.API.Models.Campeonato");
 
-                    b.Property<bool>("ConfrontosGerados")
-                        .HasColumnType("BOOLEAN");
+                    b.Property<short>("ConfrontosGerados")
+                        .HasColumnType("NUMBER(1)");
 
                     b.Property<int>("TotalRodadas")
                         .HasColumnType("NUMBER(10)");

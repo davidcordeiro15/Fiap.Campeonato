@@ -23,7 +23,7 @@ namespace Fiap.Banco.API.Migrations
                     DataFim = table.Column<DateTime>(type: "TIMESTAMP(7)", nullable: false),
                     Tipo = table.Column<string>(type: "NVARCHAR2(21)", maxLength: 21, nullable: false),
                     TotalRodadas = table.Column<int>(type: "NUMBER(10)", nullable: true),
-                    ConfrontosGerados = table.Column<bool>(type: "BOOLEAN", nullable: true)
+                    ConfrontosGerados = table.Column<short>(type: "NUMBER(1)", nullable: true)
                 },
                 constraints: table =>
                 {

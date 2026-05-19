@@ -34,7 +34,11 @@ namespace Fiap.Banco.API.Data
                 .HasValue<Campeonato>("Base")
                 .HasValue<CampeonatoPontosCorridos>("PontosCorridos");
 
-            // Composite PK for join table
+            modelBuilder.Entity<CampeonatoPontosCorridos>()
+                .Property(c => c.ConfrontosGerados)
+                .HasConversion<short>()
+                .HasColumnType("NUMBER(1)");
+            // Composite PK
             modelBuilder.Entity<TimeCampeonato>()
                 .HasKey(tc => new { tc.TimeId, tc.CampeonatoId });
 
@@ -48,7 +52,6 @@ namespace Fiap.Banco.API.Data
                 .WithMany(c => c.Times)
                 .HasForeignKey(tc => tc.CampeonatoId);
 
-            // Partida: two FK to Time — disable cascade to avoid cycles
             modelBuilder.Entity<Partida>()
                 .HasOne(p => p.TimeCasa)
                 .WithMany()
@@ -61,7 +64,6 @@ namespace Fiap.Banco.API.Data
                 .HasForeignKey(p => p.TimeVisitanteId)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            // Estatistica: unique per Time+Campeonato
             modelBuilder.Entity<Estatistica>()
                 .HasIndex(e => new { e.TimeId, e.CampeonatoId })
                 .IsUnique();
