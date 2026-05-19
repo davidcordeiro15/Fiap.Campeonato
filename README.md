@@ -8,9 +8,8 @@ API backend para gerenciamento de campeonatos de futebol, desenvolvida com .NET 
 
 | Nome | RM |
 |------|----|
-| Integrante 1 | RM00000 |
-| Integrante 2 | RM00000 |
-| Integrante 3 | RM00000 |
+| Marchel Augusto | RM99856 |
+| David Cordeiro | RM 557538 |
 
 ---
 
